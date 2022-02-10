@@ -1,39 +1,27 @@
-package com.example.data.entity;
+package com.example.data.dto;
 
 import com.example.data.enums.OrderPaymentStatus;
 import com.example.data.enums.OrderStatus;
 import com.example.data.enums.PaymentType;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.Set;
 
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-public class Order {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @CreationTimestamp
+public class OrderDto {
     private Date creationDate;
-    @Enumerated(EnumType.STRING)
     private OrderStatus orderstatus;
-    @Enumerated(EnumType.STRING)
     private OrderPaymentStatus orderPaymentStatus;
-    @Enumerated(EnumType.STRING)
     private PaymentType paymentType;
-    @OneToOne
-    private Work work;
-    @Column(length = 5000)
+    private WorkDto work;
     private String description;
-    @OneToMany
-    private Set<Offer> offers;
-
+    private Set<OfferDto> offers;
 
 }
