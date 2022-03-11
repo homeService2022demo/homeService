@@ -17,7 +17,7 @@ import java.util.Set;
 public class MainService {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "NAME", length = 20)
     private String name;

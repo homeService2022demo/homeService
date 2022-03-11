@@ -18,7 +18,7 @@ import java.util.Date;
 public class Work {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
     @Column(name = "START_DATE")
     private Date startDate;
