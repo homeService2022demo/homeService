@@ -1,5 +1,9 @@
 package com.example.data.enums;
 
+/**
+ * @author fh.kazemi
+ **/
+
 public enum OrderStatus {
     NEW(0,"new"),
     WAIT_FOR_SUGGESTION(1,"waiteForSuggestion"),

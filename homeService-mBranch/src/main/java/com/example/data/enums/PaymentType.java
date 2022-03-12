@@ -1,5 +1,9 @@
 package com.example.data.enums;
 
+/**
+ * @author fh.kazemi
+ **/
+
 public enum PaymentType {
     BY_CASH(0, "byCash"),
     BY_CARD(1, "byCard"),

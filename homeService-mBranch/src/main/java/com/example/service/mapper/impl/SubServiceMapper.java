@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 /**
  * @author fh.kazemi
  **/
+
 @Data
 @Service
 public class SubServiceMapper implements GenericMapper<SubService, SubServiceDto> {

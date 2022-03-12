@@ -1,5 +1,9 @@
 package com.example.data.enums;
 
+/**
+ * @author fh.kazemi
+ **/
+
 public enum OrderPaymentStatus {
     PAID(0, "paid"),
     NOT_PAID(1, "notPaid");

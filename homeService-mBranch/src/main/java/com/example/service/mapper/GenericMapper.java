@@ -10,5 +10,6 @@ import org.springframework.stereotype.Service;
 public interface GenericMapper<Entity, EntityDto> {
 
     EntityDto convertToDto(Entity entity);
+
     Entity convertToEntity(EntityDto entityDto);
 }

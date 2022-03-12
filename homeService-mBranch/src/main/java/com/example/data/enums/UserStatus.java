@@ -1,5 +1,9 @@
 package com.example.data.enums;
 
+/**
+ * @author fh.kazemi
+ **/
+
 public enum UserStatus {
     ACTIVE(0,"active"),
     DEACTIVATE(1,"deActive");

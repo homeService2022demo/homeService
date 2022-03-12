@@ -1,5 +1,9 @@
 package com.example.data.enums;
 
+/**
+ * @author fh.kazemi
+ **/
+
 public enum OfferStatus {
     NEW(0,"new"),
     WAITING(1,"waiting"),
