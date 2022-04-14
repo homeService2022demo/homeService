@@ -24,11 +24,11 @@ public class Comment {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "ORDER_ID")
     private Order order;
 
     @ManyToOne
-    @JoinColumn(name = "customer_id")
+    @JoinColumn(name = "CUSTOMER_ID")
     private Customer customer;
 
     public Comment() {
