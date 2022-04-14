@@ -1,5 +1,7 @@
 package com.example.data.dto;
 
+import com.example.data.entity.Customer;
+import com.example.data.entity.SubService;
 import com.example.data.enums.OrderPaymentStatus;
 import com.example.data.enums.OrderStatus;
 import com.example.data.enums.PaymentType;
@@ -18,6 +20,8 @@ import java.util.Set;
 public class OrderDto {
     private Date creationDate;
     private OrderStatus orderstatus;
+    private Customer customer;
+    private SubService subService;
     private OrderPaymentStatus orderPaymentStatus;
     private PaymentType paymentType;
     private WorkDto work;

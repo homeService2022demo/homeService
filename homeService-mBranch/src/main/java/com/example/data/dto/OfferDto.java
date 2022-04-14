@@ -1,5 +1,6 @@
 package com.example.data.dto;
 
+import com.example.data.entity.Order;
 import com.example.data.enums.OfferStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +21,7 @@ public class OfferDto {
     private Date acceptedDate;
     private Date rejectedDate;
     private int offeredPrice;
+    private Order order;
     private ExpertDto expert;
     private OfferStatus offerStatus;
     private int offeredWorkDuration;

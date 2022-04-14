@@ -19,6 +19,7 @@ public class UserDto {
     private String username;
     private String password;
     private AddressDto addressDto;
+    private Double creditCartDto;
     private Date registerDate;
     private Date modifyDate;
     private UserStatus status;

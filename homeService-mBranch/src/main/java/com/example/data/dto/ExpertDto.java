@@ -17,8 +17,8 @@ public class ExpertDto extends UserDto{
     private Set<SubServiceDto> subServiceDtos;
 
     @Builder
-    public ExpertDto(String name, String surname, String email, String username, String password, AddressDto addressDto, Date registerDate, Date modifyDate, UserStatus status, double score, byte[] profileImage, Set<SubServiceDto> subServiceDtos) {
-        super(name, surname, email, username, password, addressDto, registerDate, modifyDate, status);
+    public ExpertDto(String name, String surname, String email, String username, String password, AddressDto addressDto,Double creditCart, Date registerDate, Date modifyDate, UserStatus status, double score, byte[] profileImage, Set<SubServiceDto> subServiceDtos) {
+        super(name, surname, email, username, password, addressDto,creditCart, registerDate, modifyDate, status);
         this.score = score;
         this.profileImage = profileImage;
         this.subServiceDtos = subServiceDtos;
