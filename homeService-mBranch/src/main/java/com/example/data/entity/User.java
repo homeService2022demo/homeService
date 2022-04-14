@@ -17,6 +17,7 @@ import java.util.Date;
 @Builder
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Table(name = "USERS")
+@Entity
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,6 +40,9 @@ public class User {
 
     @OneToOne
     private Address address;
+
+    @Column(name = "CREDIT_CART")
+    private Double creditCart;
 
     @Column(name = "REGISTER_DATE")
     @CreationTimestamp

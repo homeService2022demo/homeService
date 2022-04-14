@@ -16,12 +16,12 @@ import java.util.Set;
 @Entity
 @Table(name = "CUSTOMER")
 public class Customer extends User {
-    @OneToMany
+    @OneToMany(mappedBy = "customer")
     private Set<Order> orders;
 
     @Builder
-    public Customer(int id, String name, String surname, String email, String username, String password, Address address, Date registerDate, Date modifyDate, UserStatus status, Set<Order> orders) {
-        super(id, name, surname, email, username, password, address, registerDate, modifyDate, status);
+    public Customer(int id, String name, String surname, String email, String username, String password, Address address,Double creditCart, Date registerDate, Date modifyDate, UserStatus status, Set<Order> orders) {
+        super(id, name, surname, email, username, password, address, creditCart, registerDate, modifyDate, status);
         this.orders = orders;
     }
 }

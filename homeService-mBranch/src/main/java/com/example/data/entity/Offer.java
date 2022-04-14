@@ -37,7 +37,12 @@ public class Offer {
     @Column(name = "OFFERED_PRICE")
     private int offeredPrice;
 
-    @OneToOne
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Order order;
+
+    @ManyToOne
+    @JoinColumn(nullable = false)
     private Expert expert;
 
     @Column(name = "OFFER_STATUS")

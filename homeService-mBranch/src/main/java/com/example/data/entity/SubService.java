@@ -23,7 +23,7 @@ public class SubService {
     private String name;
 
     @Column(name="BASE_PRICE",length = 20)
-    private int basePrice;
+    private Double basePrice;
 
     @Column(name="DESCRIPTION",length = 5000)
     private String description;

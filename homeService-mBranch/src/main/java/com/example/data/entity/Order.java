@@ -32,6 +32,13 @@ public class Order {
     @Enumerated(EnumType.STRING)
     private OrderStatus orderstatus;
 
+    @ManyToOne
+    @JoinColumn(nullable = false)
+    private Customer customer;
+
+    @ManyToOne
+    private SubService subService;
+
     @Column(name = "ORDER_PAYMENT_STATUS")
     @Enumerated(EnumType.STRING)
     private OrderPaymentStatus orderPaymentStatus;
@@ -43,7 +50,7 @@ public class Order {
     @OneToOne
     private Work work;
 
-    @OneToMany
+    @OneToMany(mappedBy = "order")
     private Set<Offer> offers;
 
     @Column(name = "DESCRIPTION", length = 5000)
