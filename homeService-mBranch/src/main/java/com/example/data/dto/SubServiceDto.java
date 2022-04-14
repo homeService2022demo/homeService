@@ -12,5 +12,5 @@ import lombok.NoArgsConstructor;
 public class SubServiceDto {
     private String name;
     private String description;
-    private int basePrice;
+    private Double basePrice;
 }
