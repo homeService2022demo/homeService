@@ -1,6 +1,7 @@
 package com.example.data.repository;
 
 import com.example.data.entity.Comment;
+import com.example.data.entity.Customer;
 import com.example.data.entity.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.query.Param;
@@ -16,4 +17,5 @@ import java.util.Optional;
 @Repository
 public interface CommentRepository extends JpaRepository<Comment, Integer> {
     Optional<List<Comment>> findAllByOrder(Order order);
+    Optional<List<Comment>> findAllByCustomer(Customer customer);
 }
