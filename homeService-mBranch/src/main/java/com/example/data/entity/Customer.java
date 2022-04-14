@@ -19,9 +19,13 @@ public class Customer extends User {
     @OneToMany(mappedBy = "customer")
     private Set<Order> orders;
 
+    @OneToMany(mappedBy = "customer")
+    private Set<Comment> comments;
+
     @Builder
-    public Customer(int id, String name, String surname, String email, String username, String password, Address address,Double creditCart, Date registerDate, Date modifyDate, UserStatus status, Set<Order> orders) {
+    public Customer(int id, String name, String surname, String email, String username, String password, Address address, Double creditCart, Date registerDate, Date modifyDate, UserStatus status, Set<Order> orders, Set<Comment> comments) {
         super(id, name, surname, email, username, password, address, creditCart, registerDate, modifyDate, status);
         this.orders = orders;
+        this.comments = comments;
     }
 }
