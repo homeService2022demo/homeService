@@ -3,6 +3,7 @@ package com.example.service.mapper.impl;
 import com.example.data.dto.AddressDto;
 import com.example.data.entity.Address;
 import com.example.service.mapper.GenericMapper;
+import lombok.Builder;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 

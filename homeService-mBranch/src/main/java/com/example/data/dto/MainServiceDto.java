@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 import java.util.Set;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class MainServiceDto {
     private String name;
     private Set<SubServiceDto> subServiceDtos;

@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 import java.util.Date;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class WorkDto {
     private Date startDate;
     private Date finishedDate;

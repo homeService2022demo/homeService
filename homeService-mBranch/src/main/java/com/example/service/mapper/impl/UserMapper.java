@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 
 @Data
 @Service
-@NoArgsConstructor
 public class UserMapper implements GenericMapper<User, UserDto> {
 
     private AddressMapper addressMapper;
