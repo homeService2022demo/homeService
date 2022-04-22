@@ -58,6 +58,6 @@ public class Order {
     }
 
     public void setOrderTackingCode() {
-        this.orderTackingCode = TackingCode.generate();
+        this.orderTackingCode = TrackingCode.generate();
     }
 }
