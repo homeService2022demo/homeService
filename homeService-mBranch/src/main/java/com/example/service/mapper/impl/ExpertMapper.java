@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.HashSet;
 import java.util.stream.Collectors;
 
+
 /**
  * @author fh.kazemi
  **/
@@ -27,7 +28,7 @@ public class ExpertMapper implements GenericMapper<Expert, ExpertDto> {
 
     @Override
     public ExpertDto convertToDto(Expert expert) {
-        return ExpertDto.builder()
+        return ExpertDto.ExpertDtoBuilder()
                 .name(expert.getName())
                 .surname(expert.getSurname())
                 .username(expert.getUsername())
@@ -39,7 +40,7 @@ public class ExpertMapper implements GenericMapper<Expert, ExpertDto> {
                 .modifyDate(expert.getModifyDate())
                 .score(expert.getScore())
                 .profileImage(expert.getProfileImage())
-                .subServiceDtos(expert.getSubServices()
+                .subServicesDtos(expert.getSubServices()
                         .stream().map(subServiceMapper::convertToDto)
                         .collect(Collectors.toCollection(HashSet::new)))
                 .build();
@@ -47,7 +48,7 @@ public class ExpertMapper implements GenericMapper<Expert, ExpertDto> {
 
     @Override
     public Expert convertToEntity(ExpertDto expertDto) {
-        return Expert.builder()
+        return Expert.ExpertBuilder()
                 .name(expertDto.getName())
                 .surname(expertDto.getSurname())
                 .username(expertDto.getUsername())
@@ -65,4 +66,3 @@ public class ExpertMapper implements GenericMapper<Expert, ExpertDto> {
                 .build();
     }
 }
-

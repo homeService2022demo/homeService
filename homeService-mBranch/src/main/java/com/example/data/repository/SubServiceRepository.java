@@ -20,9 +20,6 @@ public interface SubServiceRepository extends JpaRepository<SubService, Integer>
 
     Optional<SubService> findByName(String name);
 
-    @Query(value = "from MainService inner join SubService s on s.name=:name")
-    Optional<MainService> findMainService(@Param("name")String name);
-
-    @Query(value = "select e.subServices from Expert e where e.id=:id")
-    Optional<List<SubService>> findAllSunServicesOfOneExpert(@Param("id") Integer id);
+    @Query(value = "select e.subServices from Expert e where e.email=:email")
+    Optional<List<SubService>> findSubServicesOfOneExpert(@Param("email") String email);
 }

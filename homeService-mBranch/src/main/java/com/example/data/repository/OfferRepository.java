@@ -19,14 +19,12 @@ import java.util.Optional;
 
 @Repository
 public interface OfferRepository extends JpaRepository<Offer, Integer> {
-    Optional<List<Offer>> findOffersByOrder(Order order);
+    //Optional<List<Offer>> findOffersByOrder(Order order);
 
     Optional<List<Offer>> findOffersByExpert(Expert expert);
 
-    Optional<List<Offer>> findOffersByOrderAndExpert(Order order, Expert expert);
-
     @Modifying
     @Transactional
-    @Query(value = "update Offer o set o.offerStatus=:status where o.id=:id")
-    void updateOfferStatus(@Param("status") String status, @Param("id") Integer id);
+    @Query(value = "update Offer o set o.offerStatus=:status where o.expert.email=:email")
+    void updateOfferStatus(@Param("status") String status, @Param("email") String email);
 }

@@ -1,6 +1,7 @@
 package com.example.data.repository;
 
 import com.example.data.entity.Customer;
+import com.example.data.entity.Offer;
 import com.example.data.entity.Order;
 import com.example.data.entity.SubService;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -22,10 +23,10 @@ public interface OrderRepository extends JpaRepository<Order, Integer> {
 
     Optional<List<Order>> findOrderBySubService(SubService subService);
 
-    Optional<List<Order>> findOrdersByCustomer(Customer customer);
+    Optional<Order> findOrderByOffersContains(Offer offer);
 
     @Modifying
     @Transactional
-    @Query(value = "update Order o set o.orderstatus=:status where o.id=:id")
-    void updateOrderStatus(@Param("status") String status, @Param("id") Integer id);
+    @Query(value = "update Order o set o.orderstatus=:status where o.orderTackingCode=:orderTackingCode")
+    void updateOrderStatus(@Param("status") String status, @Param("orderTackingCode") String orderTackingCode);
 }

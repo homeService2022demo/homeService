@@ -13,6 +13,7 @@ import java.util.stream.Collectors;
  * @author fh.kazemi
  **/
 
+
 @Data
 @Service
 public class CustomerMapper implements GenericMapper<Customer, CustomerDto> {
@@ -22,7 +23,7 @@ public class CustomerMapper implements GenericMapper<Customer, CustomerDto> {
 
     @Override
     public CustomerDto convertToDto(Customer customer) {
-        return CustomerDto.builder()
+        return CustomerDto.CustomerDtoBuilder()
                 .name(customer.getName())
                 .surname(customer.getSurname())
                 .username(customer.getUsername())
@@ -40,7 +41,7 @@ public class CustomerMapper implements GenericMapper<Customer, CustomerDto> {
 
     @Override
     public Customer convertToEntity(CustomerDto customerDto) {
-        return Customer.builder()
+        return Customer.CustomerBuilder()
                 .name(customerDto.getName())
                 .surname(customerDto.getSurname())
                 .username(customerDto.getUsername())

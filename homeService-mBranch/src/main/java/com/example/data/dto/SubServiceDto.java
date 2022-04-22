@@ -6,11 +6,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class SubServiceDto {
     private String name;
-    private String description;
     private Double basePrice;
+    private String description;
 }

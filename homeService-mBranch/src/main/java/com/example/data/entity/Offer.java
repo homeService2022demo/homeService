@@ -39,10 +39,6 @@ public class Offer {
 
     @ManyToOne
     @JoinColumn(nullable = false)
-    private Order order;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
     private Expert expert;
 
     @Column(name = "OFFER_STATUS")

@@ -13,15 +13,14 @@ import java.time.LocalTime;
 import java.util.Date;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class OfferDto {
     private Date creationDate;
     private Date acceptedDate;
     private Date rejectedDate;
     private int offeredPrice;
-    private Order order;
     private ExpertDto expert;
     private OfferStatus offerStatus;
     private int offeredWorkDuration;

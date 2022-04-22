@@ -9,15 +9,11 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-@Builder
 @AllArgsConstructor
+@Builder
 public class CommentDto {
     private final LocalDateTime commentDate;
     private String description;
     private Order order;
     private Customer customer;
-
-    public CommentDto() {
-        commentDate = LocalDateTime.now();
-    }
 }

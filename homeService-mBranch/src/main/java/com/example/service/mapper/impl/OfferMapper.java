@@ -6,9 +6,11 @@ import com.example.service.mapper.GenericMapper;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
+
 /**
  * @author fh.kazemi
  **/
+
 
 @Data
 @Service

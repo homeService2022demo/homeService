@@ -19,15 +19,17 @@ import java.util.Set;
 
 @Repository
 public interface ExpertRepository extends JpaRepository<Expert, Integer> {
-    Optional<List<Expert>> findAllBySubServices(SubService subService);
+    Optional<List<Expert>> findAllBySubServicesContains(SubService subService);
 
     @Modifying
     @Transactional
     @Query(value = "update Expert set score=:score where  email=:email")
-    void updateScore(@Param("email") String email, @Param("score") double score);
+    void updateScore(@Param("email") String email,
+                     @Param("score") double score);
 
     @Modifying
     @Transactional
     @Query(value = "update Expert e set e.subServices=:subServicesList where e.email=:email")
-    void updateServiceList(@Param("email") String email, @Param("subServicesList") Set<SubService> subServicesList);
+    void updateServiceList(@Param("email") String email,
+                           @Param("subServicesList") Set<SubService> subServicesList);
 }

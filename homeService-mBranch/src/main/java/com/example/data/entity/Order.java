@@ -6,7 +6,6 @@ import com.example.data.enums.PaymentType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
@@ -15,7 +14,6 @@ import java.util.Set;
 
 @Data
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
 @Entity
 @Table(name = "ORDER")
@@ -24,6 +22,9 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @Column(name = "ORDER_TRACKING_CODE")
+    private String orderTackingCode;//random alpha-numeric string
+
     @Column(name = "CREATION_DATE")
     @CreationTimestamp
     private Date creationDate;
@@ -31,10 +32,6 @@ public class Order {
     @Column(name = "ORDER_STATUS")
     @Enumerated(EnumType.STRING)
     private OrderStatus orderstatus;
-
-    @ManyToOne
-    @JoinColumn(nullable = false)
-    private Customer customer;
 
     @ManyToOne
     private SubService subService;
@@ -50,9 +47,17 @@ public class Order {
     @OneToOne
     private Work work;
 
-    @OneToMany(mappedBy = "order")
+    @OneToMany
     private Set<Offer> offers;
 
     @Column(name = "DESCRIPTION", length = 5000)
     private String description;
+
+    public Order() {
+        setOrderTackingCode();
+    }
+
+    public void setOrderTackingCode() {
+        this.orderTackingCode = TackingCode.generate();
+    }
 }

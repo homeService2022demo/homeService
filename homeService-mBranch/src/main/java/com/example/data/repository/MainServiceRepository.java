@@ -24,10 +24,13 @@ public interface MainServiceRepository extends JpaRepository<MainService, Intege
 
     Optional<MainService> findByName(String name);
 
+    Optional<MainService> findBySubServicesContains(SubService subService);
+
     Integer deleteByName(@Param("name") String name);
 
     @Modifying
     @Transactional
     @Query(value = "update MainService m set m.subServices=:subServices where m.name=:name")
-    void updateSubServices(@Param("name") String name, @Param("subServices") Set<SubService> subServices);
+    void updateSubServices(@Param("name") String name,
+                           @Param("subServices") Set<SubService> subServices);
 }

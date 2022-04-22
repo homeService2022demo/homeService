@@ -14,18 +14,17 @@ import java.util.Date;
 import java.util.Set;
 
 @Data
-@Builder
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class OrderDto {
+    private String orderTackingCode;
     private Date creationDate;
     private OrderStatus orderstatus;
-    private Customer customer;
     private SubService subService;
     private OrderPaymentStatus orderPaymentStatus;
     private PaymentType paymentType;
     private WorkDto work;
+    private Set<OfferDto> offerDtos;
     private String description;
-    private Set<OfferDto> offers;
-
 }
